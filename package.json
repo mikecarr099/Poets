@@ -1,0 +1,24 @@
+{
+  "name": "poets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gumootn/poets.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/gumootn/poets/issues"
+  },
+  "homepage": "https://github.com/gumootn/poets#readme",
+  "devDependencies": {
+    "typescript": "^5.9.2"
+  }
+}

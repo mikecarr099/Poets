@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Search and explore poetry by author and title using the Poetry DB">
+    <title>Poetry Explorer - Search Poems by Author & Title</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="preconnect" href="https://poetrydb.org">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Poetry Explorer</h1>
+            <p class="subtitle">Discover beautiful poetry from talented authors</p>
+        </header>
+
+        <main>
+            <!-- Search Form Section -->
+            <section id="searchSection" class="search-section" aria-label="Poetry Search">
+                <form id="searchForm" class="search-form" role="search">
+                    <h2>Search Poetry</h2>
+                    <p class="form-description">Enter an author name, poem title, or both to find poems</p>
+                    
+                    <div class="form-group">
+                        <label for="authorName">Author Name:</label>
+                        <input 
+                            type="text" 
+                            id="authorName" 
+                            name="authorName" 
+                            placeholder="e.g., Emily Dickinson" 
+                            autocomplete="off"
+                            aria-describedby="author-help">
+                        <small id="author-help" class="help-text">Search by poet's name</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="poemTitle">Poem Title:</label>
+                        <input 
+                            type="text" 
+                            id="poemTitle" 
+                            name="poemTitle" 
+                            placeholder="e.g., Hope is the thing with feathers" 
+                            autocomplete="off"
+                            aria-describedby="title-help">
+                        <small id="title-help" class="help-text">Search by poem title</small>
+                    </div>
+
+                    <button type="submit" id="submitBtn" class="search-btn">
+                        <span class="btn-text">Search Poetry</span>
+                        <div class="loading-spinner" aria-hidden="true"></div>
+                    </button>
+                </form>
+            </section>
+
+            <!-- Results Section -->
+            <section id="resultsSection" class="results-section" aria-label="Search Results">
+                <div id="authorTableDiv" class="table-container">
+                    <div class="table-header">
+                        <h2 id="resultsTitle">Search Results</h2>
+                        <p id="resultsCount" class="results-count"></p>
+                    </div>
+                    <div class="table-wrapper">
+                        <table id="dataTable" class="results-table" role="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Author</th>
+                                    <th scope="col">Title</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Poem Display Section -->
+            <section id="poemSection" class="poem-section" aria-label="Poem Content">
+                <div id="linesTextDiv" class="poem-container">
+                    <header class="poem-header">
+                        <h2 id="linesHeader" class="poem-title"></h2>
+                        <button id="favoriteBtn" class="favorite-btn" aria-label="Add to favorites">
+                            <span class="heart-icon">♡</span>
+                        </button>
+                    </header>
+                    <div id="linesText" class="poem-content" role="article"></div>
+                    <footer class="poem-footer">
+                        <button id="backBtn" class="back-btn">
+                            <span class="back-icon">←</span>
+                            Back to Results
+                        </button>
+                    </footer>
+                </div>
+            </section>
+        </main>
+
+        <!-- Loading Overlay -->
+        <div id="loadingOverlay" class="loading-overlay" aria-hidden="true">
+            <div class="loading-content">
+                <div class="loading-spinner large"></div>
+                <p>Searching for poetry...</p>
+            </div>
+        </div>
+
+        <!-- Error Messages -->
+        <div id="errorContainer" class="error-container" role="alert" aria-live="polite"></div>
+    </div>
+
+    <script src="../dist/ts/main.js" defer></script>
+</body>
+
+</html>
