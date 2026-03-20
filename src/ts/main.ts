@@ -1,9 +1,6 @@
 // DOM Elements
-const searchSection = document.querySelector("#searchSection") as HTMLElement | null;
 const resultsSection = document.querySelector("#resultsSection") as HTMLElement | null;
 const poemSection = document.querySelector("#poemSection") as HTMLElement | null;
-const authorTableDiv = document.querySelector("#authorTableDiv") as HTMLElement | null;
-const linesTextDiv = document.querySelector("#linesTextDiv") as HTMLElement | null;
 const linesHeader = document.querySelector("#linesHeader") as HTMLElement | null;
 const linesText = document.querySelector("#linesText") as HTMLElement | null;
 const loadingOverlay = document.querySelector("#loadingOverlay") as HTMLElement | null;
